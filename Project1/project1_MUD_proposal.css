@@ -1,0 +1,51 @@
+@font-face {
+  font-family: terminal;
+  src: url(font_terminal.otf);
+}
+body {
+  text-align: center;
+  padding: 70px;
+  background-image: (
+    url=
+      "https://i.guim.co.uk/img/media/b563ac5db4b4a4e1197c586bbca3edebca9173cd/0_12_3307_1985/master/3307.jpg?width=645&quality=45&auto=format&fit=max&dpr=2&s=de31e0b8236f8e2c605ec1b113fceece"
+  );
+}
+h1 {
+  font-weight: bold;
+  color: brown;
+}
+p {
+  width: 100%;
+}
+.gameBox {
+  height: 56vh;
+  text-align: bottom;
+  display: flex;
+  align-items: flex-end;
+}
+nav {
+  display: block;
+}
+.rickSpeak {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+div.gameBox {
+  background-color: #3d5b59;
+  color: #b5e5cf;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  padding: 8px;
+  text-align: left;
+  font-family: terminal;
+}
+#insetbar {
+  color: brown;
+  background-color: #b99095;
+  margin-bottom: 0px;
+  text-align: left;
+  opacity: 80%;
+  padding: 4px 4px 4px 8px;
+  font-family: terminal;
+}

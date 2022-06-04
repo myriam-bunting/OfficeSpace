@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "north": 2,
+    "south": null,
+    "west": null,
+    "east": null,
+    "monsters": null,
+    "treasure": {
+      "type": "coin",
+      "amount": 5
+    },
+    "description": "the room is dark and smells of poop, You see a door to the north of the room"
+  },
+  {
+    "id": 2,
+    "north": null,
+    "south": 1,
+    "west": null,
+    "east": null,
+    "monsters": null,
+    "treasure": null,
+    "description": "Seems empty. want to go back"
+  }
+]
