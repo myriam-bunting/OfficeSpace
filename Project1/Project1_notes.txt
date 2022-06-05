@@ -7,3 +7,16 @@ MVP ==> Minimal viable product ==> Meets requirements
 Stretch Goals ==> extra ideas to make 
 
 Ideas: Uno, 2048, choose your own adventure, sanga stacks
+
+
+
+howToPlay(
+    "HOW TO PLAY: Race through the HotDesk office to find your resume. Use the controls below to navigate the obstacles. Pick up items to aid in your adventure"
+  );
+
+  const controls = (text) => {
+    document.querySelector("nav").addEventListener("click", logText(text));
+  };
+  controls(
+    "Use North, South, East, West to change direction. Use 'Pick Up' to collect items. Attack will give you options for a weapon"
+  );

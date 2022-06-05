@@ -1,25 +1,216 @@
 [
   {
+    "id": 0,
+    "location": "Lift Lobby",
+    "north": null,
+    "south": null,
+    "west": 1,
+    "east": null,
+    "monsters": null,
+    "treasure": null,
+    "description": "The lift doors open. Time to get going or you'll be late!"
+  },
+  {
     "id": 1,
+    "location": "Hallway",
     "north": 2,
+    "south": null,
+    "west": null,
+    "east": 0,
+    "monsters": null,
+    "treasure": {
+      "type": "cookies",
+      "amount": 5
+    },
+    "description": ""
+  },
+  {
+    "id": 2,
+    "location": "Pantry",
+    "north": 3,
+    "south": 1,
+    "west": null,
+    "east": null,
+    "monsters": null,
+    "treasure": {
+      "type": "cookies",
+      "amount": 5
+    },
+    "description": "You have reached the pantry. You see some delicious cookies lying there.. free for all.. A snack could help jog your memory.. "
+  },
+  {
+    "id": 3,
+    "location": "Hallway",
+    "north": 4,
+    "south": 16,
+    "west": null,
+    "east": 7,
+    "monsters": null,
+    "treasure": null,
+    "description": "The sound of clicky keyboards hits your ears like a machine gun. The Hot Desk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
+  },
+
+  {
+    "id": 4,
+    "location": "Hallway",
+    "north": null,
+    "south": 3,
+    "west": null,
+    "east": 5,
+    "monsters": null,
+    "treasure": {
+      "type": "cookies",
+      "amount": 5
+    },
+    "description": "Damn, you reach the desk by the window. Staring intensely at the current occupant makes him look up awkwardly from his screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
+  },
+  {
+    "id": 5,
+    "location": "Hallway",
+    "north": null,
+    "south": 7,
+    "west": 4,
+    "east": 6,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 6,
+    "location": "Hallway",
+    "north": null,
+    "south": null,
+    "west": 10,
+    "east": 5,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 7,
+    "location": "Couches",
+    "north": 8,
+    "south": 5,
+    "west": 3,
+    "east": null,
+    "monsters": null,
+    "treasure": null,
+    "description": "GA students have flooded the corridor! Time to choose a new path"
+  },
+  {
+    "id": 8,
+    "location": "HotDesk zone",
+    "north": null,
+    "south": 7,
+    "west": null,
+    "east": 9,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 9,
+    "location": "Meeting Room",
+    "north": 10,
+    "south": null,
+    "west": 8,
+    "east": null,
+    "monsters": null,
+    "treasure": {
+      "type": "milo",
+      "amount": 7
+    },
+    "description": "This search has been exhausting. You need some energy. Drink a milo"
+  },
+  {
+    "id": 10,
+    "location": "HotDesk zone ",
+    "north": null,
+    "south": 9,
+    "west": 15,
+    "east": 6,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 11,
+    "location": "Office Space",
+    "north": null,
+    "south": null,
+    "west": 12,
+    "east": 13,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 12,
+    "location": "Office Space",
+    "north": null,
+    "south": null,
+    "west": 16,
+    "east": 11,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 13,
+    "location": "Projector Room",
+    "north": 14,
+    "south": null,
+    "west": 11,
+    "east": null,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 14,
+    "location": "Hallway",
+    "north": 15,
+    "south": 13,
+    "west": null,
+    "east": null,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 15,
+    "location": "Meeting room",
+    "north": null,
+    "south": 14,
+    "west": 10,
+    "east": 17,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 16,
+    "location": "Printing room",
+    "north": 3,
+    "south": null,
+    "west": null,
+    "east": 12,
+    "monsters": null,
+    "treasure": null,
+    "description": ""
+  },
+  {
+    "id": 17,
+    "location": "HotDesk zone 3",
+    "north": null,
     "south": null,
     "west": null,
     "east": null,
     "monsters": null,
     "treasure": {
-      "type": "coin",
-      "amount": 5
+      "type": "resume",
+      "amount": "50"
     },
-    "description": "the room is dark and smells of poop, You see a door to the north of the room"
-  },
-  {
-    "id": 2,
-    "north": null,
-    "south": 1,
-    "west": null,
-    "east": null,
-    "monsters": null,
-    "treasure": null,
-    "description": "Seems empty. want to go back"
+    "description": "You've made it! You slid out the chair to find a pristine resume"
   }
 ]

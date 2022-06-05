@@ -1,0 +1,92 @@
+/* root: (Thunder Cloud: #505160 Meadow: #598234 Moss: #aebd38 Waterfall: #68829e) */
+@font-face {
+  font-family: terminal;
+  src: url(font_terminal.otf);
+}
+body {
+  text-align: center;
+  padding: 70px;
+  background-image: (
+    url=
+      "https://i.guim.co.uk/img/media/b563ac5db4b4a4e1197c586bbca3edebca9173cd/0_12_3307_1985/master/3307.jpg?width=645&quality=45&auto=format&fit=max&dpr=2&s=de31e0b8236f8e2c605ec1b113fceece"
+  );
+}
+h1 {
+  font-weight: bold;
+  color: #598234;
+  width: 20%;
+  display: inline;
+  padding-top: 2em;
+}
+#img-space-bar {
+  width: 12em;
+  height: 12em;
+  display: inline;
+}
+h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+nav {
+  display: block;
+  margin: 1em;
+}
+#insetbar {
+  color: #505160;
+  background-color: #aebd38;
+  margin-bottom: 0px;
+  text-align: left;
+  opacity: 80%;
+  padding: 4px 4px 4px 8px;
+  font-family: terminal;
+  border: 2px solid darkgrey;
+  border-bottom: 0px;
+  font-size: 1.2em;
+}
+div.gameBox {
+  background-color: #505160;
+  color: #aebd38;
+  margin-bottom: 20px;
+  padding: 8px;
+  font-family: terminal;
+  border: 2px solid darkgrey;
+  border-top: 0px;
+  height: 56vh;
+  text-align: left bottom;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+p {
+  min-width: 100%;
+  padding: 2px;
+  display: block;
+  position: relative;
+}
+
+#controls {
+  margin: 0.5em;
+  display: inline-block;
+  width: 33.333%;
+}
+#controls button {
+  height: 2em;
+  font-size: 1em;
+  margin: 0.2em;
+}
+
+.action-btns {
+  display: inline-block;
+}
+
+.btn-outline-info {
+  border: 1px solid #457db9;
+  color: #457db9;
+}
+
+.btn-outline-info:hover {
+  background-color: #457db9;
+  color: rgb(214, 212, 209);
+}
