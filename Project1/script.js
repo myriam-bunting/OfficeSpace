@@ -68,19 +68,39 @@ const wholeDocument = async () => {
     document.querySelector(".gameBox").appendChild(anyText);
   };
 
-  const howToPlay = (text) => {
-    document.querySelector("nav").addEventListener("click", function () {
-      logText(text);
-    });
-  };
-  howToPlay("test");
+  document.querySelector("nav").addEventListener("click", function () {
+    logText(
+      "HOW TO PLAY: Race through the HotDesk office to find your resume. Use the controls to navigate the obstacles"
+    );
+  });
 
-  // const controls = (text) => {
-  //   document.querySelector("nav").addEventListener("click", logText(text));
-  // };
-  // controls(
-  //   "Use North, South, East, West to change direction. Use 'Pick Up' to collect items. Attack will give you options for a weapon"
-  // );
+  document.querySelector("nav").addEventListener("click", function () {
+    logText(
+      "Use North, South, East, West to change direction. Use 'Pick Up' to collect items. Attack will give you options for a weapon"
+    );
+  });
+
+  const playerSelection = () => {
+    const type1 = document.createElement("button");
+    type1.setAttribute("id", "engineer");
+    type1.innerText = Character.type[0];
+    const type2 = document.createElement("button");
+    type2.setAttribute("id", "tutor");
+    type2.innerText = Character.type[1];
+    const type3 = document.createElement("button");
+    type3.innerText = Character.type[2];
+    type3.setAttribute("id", "manager");
+
+    logText(type1, type2, type3);
+  };
+  const startGame = () => {
+    document.querySelector("nav").addEventListener("click", function () {
+      const newPlayer = new Player();
+      playerSelection();
+    });
+    d;
+  };
+  startGame();
 
   // const player = {
   //   currentLocation: json.id,
