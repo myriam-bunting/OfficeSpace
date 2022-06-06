@@ -9,12 +9,19 @@ const wholeDocument = async () => {
       console.log(err.message); //returns a promise
     }
   };
-  // const data = await getRooms();
+  const rooms = await getRooms();
+
+  const getRoomById = (id) => {
+    return rooms.find(function (room) {
+      return room.id === id;
+    });
+  };
+  const charTypes = ["engineer", "student", "tutor", "manger"];
 
   class Character {
     constructor(
       name = "Player1",
-      type = ["engineer", "student", "tutor", "manger"],
+      type = 0,
       health = 100,
       weapon = [],
       weaponDamage = 10,
@@ -83,6 +90,7 @@ const wholeDocument = async () => {
       "Use North, South, East, West to change direction. Use Pick Up to collect items. Attack will give you options for a weapon"
     );
   });
+  const newPlayer = new Character();
 
   document.querySelector("#start-game").addEventListener("click", function () {
     const inputDiv = document.createElement("div");
@@ -92,65 +100,65 @@ const wholeDocument = async () => {
 
     const inputBar = document.createElement("input");
     inputBar.className = "inputBar";
-    inputBar.innerText = inputBar.value;
     inputDiv.append(inputBar);
 
-    const newPlayer = new Character((playerName = inputBar.innerText)); // does this work ....
-    console.log(newPlayer);
+    const typeDiv = document.createElement("div");
+    typeDiv.className = "typeDiv";
+    typeDiv.innerText = `Choose your player type\n`;
+    document.querySelector(".gameBox").append(typeDiv);
+    const playerSelection = (playerType) => {
+      let selectType = document.createElement("button");
+      selectType.className = "playerTypeSelect";
+      selectType.setAttribute("id", `${playerType}`);
+      selectType.innerText = playerType;
 
-    const playerSelection = () => {
-      const type1 = document.createElement("button");
-      type1.className = "playerTypeSelect";
-      type1.setAttribute("id", `${newPlayer.type[0]}`);
-      type1.innerText = newPlayer.type[0];
-
-      const type2 = document.createElement("button");
-      type2.className = "playerTypeSelect";
-      type2.setAttribute("id", `${newPlayer.type[1]}`);
-      type2.innerText = newPlayer.type[1];
-
-      const type3 = document.createElement("button");
-      type3.className = "playerTypeSelect";
-      type3.innerText = newPlayer.type[2];
-      type3.setAttribute("id", `${newPlayer.type[2]}`);
-
-      const type4 = document.createElement("button");
-      type4.className = "playerTypeSelect";
-      type4.innerText = newPlayer.type[3];
-      type4.setAttribute("id", `${newPlayer.type[3]}`); //clean up by writing function for adding new type
-
-      const typeDiv = document.createElement("div");
-      typeDiv.className = "typeDiv";
-      typeDiv.innerText = `Choose your player type\n`;
-      document.querySelector(".gameBox").append(typeDiv);
-
-      document.querySelector(".typeDiv").append(type1, type2, type3, type4);
+      document.querySelector(".typeDiv").append(selectType);
     };
-    playerSelection(newPlayer);
+    playerSelection(charTypes[0]);
+    playerSelection(charTypes[1]);
+    playerSelection(charTypes[2]);
+    playerSelection(charTypes[3]);
 
-    document.querySelector(".typeDiv").addEventListener("click", function (e) {
-      if (e.target === document.querySelector(".playerTypeSelect")) {
-        // e.preventDefault();
-        console.log("it works");
+    inputBar.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        console.log(`Welcome ${e.target.value}`);
+        console.log(e.target.value);
+        newPlayer.setName(inputBar.value);
+        console.log(newPlayer);
       }
     });
   });
 
-  // const player = {
-  //   currentLocation: json.id,
-  //   move: (direction) => {
-  //     if (getDungeonById(this.currentLocation).direction !== null) {
-  //       this.currentLocation = getDungeonById(this.currentLocation)[direction];
-  //     } else {
-  //     }
-  //   },
-  // };
+  document.querySelector(".typeDiv").addEventListener("click", function (e) {
+    e.preventDefault();
+  });
 
-  // const location = (text) => {
-  //   document.querySelector("#insetbar").innerText = text;
-  // };
-  // location("Pantry");
+  const move = (direction) => {
+    const currentRoom = getRoomById(newPlayer.currentRoom);
+    if (currentRoom[direction] === null) {
+      console.log("Ouch");
+    } else {
+      newPlayer.currentRoom = currentRoom[direction];
+      console.log(currentRoom);
+      document.querySelector("#insetbar").innerText = getRoomById(
+        newPlayer.currentRoom
+      ).location;
+    }
+  };
 
-  // const getCurrentRoom = () => {};
+  document.querySelector("#btn-north").addEventListener("click", function () {
+    move("north");
+  });
+
+  document.querySelector("#btn-west").addEventListener("click", function () {
+    move("west");
+  });
+
+  document.querySelector("#btn-east").addEventListener("click", function () {
+    move("east");
+  });
+  document.querySelector("#btn-south").addEventListener("click", function () {
+    move("south");
+  });
 };
 wholeDocument();

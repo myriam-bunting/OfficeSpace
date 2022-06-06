@@ -26,7 +26,7 @@
   },
   {
     "id": 2,
-    "location": "Pantry",
+    "location": "Admin Desk",
     "north": 3,
     "south": 1,
     "west": null,
@@ -36,7 +36,7 @@
       "type": "cookies",
       "amount": 5
     },
-    "description": "You have reached the pantry. You see some delicious cookies lying there.. free for all.. A snack could help jog your memory.. "
+    "description": ""
   },
   {
     "id": 3,
@@ -47,12 +47,12 @@
     "east": 7,
     "monsters": null,
     "treasure": null,
-    "description": "The sound of clicky keyboards hits your ears like a machine gun. The Hot Desk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
+    "description": "The sound of clicky keyboards hits your ears like a machine gun. The HotDesk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
   },
 
   {
     "id": 4,
-    "location": "Hallway",
+    "location": "Pantry",
     "north": null,
     "south": 3,
     "west": null,
@@ -62,18 +62,18 @@
       "type": "cookies",
       "amount": 5
     },
-    "description": "Damn, you reach the desk by the window. Staring intensely at the current occupant makes him look up awkwardly from his screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
+    "description": "You have reached the pantry. You see some delicious cookies lying there.. free for all.. A snack could help jog your memory.. "
   },
   {
     "id": 5,
-    "location": "Hallway",
+    "location": "HotDesk Zone 1",
     "north": null,
     "south": 7,
     "west": 4,
     "east": 6,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "Damn, you reach the desk by the window. Staring intensely at the current occupant makes him look up awkwardly from his screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
   },
   {
     "id": 6,
@@ -99,7 +99,7 @@
   },
   {
     "id": 8,
-    "location": "HotDesk zone",
+    "location": "HotDesk Zone 2",
     "north": null,
     "south": 7,
     "west": null,
@@ -110,7 +110,7 @@
   },
   {
     "id": 9,
-    "location": "Meeting Room",
+    "location": "Meeting Room 1",
     "north": 10,
     "south": null,
     "west": 8,
@@ -124,7 +124,7 @@
   },
   {
     "id": 10,
-    "location": "HotDesk zone ",
+    "location": "HotDesk zone 3",
     "north": null,
     "south": 9,
     "west": 15,
@@ -135,14 +135,14 @@
   },
   {
     "id": 11,
-    "location": "Office Space",
+    "location": "Fire Escape",
     "north": null,
     "south": null,
     "west": 12,
     "east": 13,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": " No more of this madness! You need to make up time. You found the fire excape to reach the second level of HotDesk. Level UP!"
   },
   {
     "id": 12,
@@ -164,18 +164,18 @@
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "Entering the dark room, you hear cheers of football fans.. the glowing screen lights up a few familiar faces .. They're software engineers you overheard chatting about pull requests yesterday.. but how are they playing FIFA already.. surely it's only 2pm. You check your watch.. Oh dear! You're running out of time!"
   },
   {
     "id": 14,
-    "location": "Hallway",
+    "location": "Printing room",
     "north": 15,
     "south": 13,
     "west": null,
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "It's thesis submition time and the printers have jammed.. yet again..causing a commotion of office ladies fussing over the solution. Trays of paper are being pulled here and there. Distracted as you carefully step over a large box of fresh paper packets, you are confronted with a mountain of crumpled paper ripped out and tossed aside in frustration. The mass suddenly starts moving towards you, seemingly falling, but then you notice the lumpy eyes and toothy staple grin. It's go time!"
   },
   {
     "id": 15,
@@ -190,18 +190,18 @@
   },
   {
     "id": 16,
-    "location": "Printing room",
+    "location": "Office Space",
     "north": 3,
     "south": null,
     "west": null,
     "east": 12,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "Everyone is at their desk working hard. You scour the room but no sign of your document"
   },
   {
     "id": 17,
-    "location": "HotDesk zone 3",
+    "location": "HotDesk zone 4",
     "north": null,
     "south": null,
     "west": null,
@@ -211,6 +211,6 @@
       "type": "resume",
       "amount": "50"
     },
-    "description": "You've made it! You slid out the chair to find a pristine resume"
+    "description": "You've made it! You slide out the chair to find a pristine resume. The refreshing feeling of success and wave of relief is interupted by a distinct sound.. As you turn around slowly, you realisse you were in fact sitting at the first desk in front of the elevators.. "
   }
 ]
