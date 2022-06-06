@@ -54,11 +54,11 @@ div.gameBox {
   height: 56vh;
   display: flex;
   align-items: flex-end;
-  overflow: hidden;
+  overflow: scroll;
   flex-wrap: wrap;
 }
 
-p .inputDiv .typeDiv {
+p {
   min-width: 100%;
   padding: 2px;
   display: block;
@@ -89,4 +89,8 @@ p .inputDiv .typeDiv {
 .btn-outline-info:hover {
   background-color: #457db9;
   color: rgb(214, 212, 209);
+}
+.inputDiv,
+.typeDiv {
+  margin: 0 auto;
 }
