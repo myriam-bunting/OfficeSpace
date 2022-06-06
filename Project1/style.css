@@ -58,7 +58,7 @@ div.gameBox {
   flex-wrap: wrap;
 }
 
-p {
+p .inputDiv .typeDiv {
   min-width: 100%;
   padding: 2px;
   display: block;
