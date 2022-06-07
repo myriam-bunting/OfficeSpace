@@ -22,7 +22,7 @@
       "type": "cookies",
       "amount": 5
     },
-    "description": ""
+    "description": "A long hallway stretches infront of you"
   },
   {
     "id": 2,
@@ -36,7 +36,7 @@
       "type": "cookies",
       "amount": 5
     },
-    "description": ""
+    "description": "Say Hi to Cheryl as you pass the Admmin desk."
   },
   {
     "id": 3,
@@ -47,7 +47,7 @@
     "east": 7,
     "monsters": null,
     "treasure": null,
-    "description": "The sound of clicky keyboards hits your ears like a machine gun. The HotDesk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
+    "description": "As you approch the main office, the sound of clicky keyboards hits your ears like a machine gun. The HotDesk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
   },
 
   {
@@ -84,7 +84,7 @@
     "east": 5,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now"
   },
   {
     "id": 7,
@@ -106,11 +106,11 @@
     "east": 9,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "A second office space unfolds as you open the door. You search the first few desks for your resume. As you pull out the chair a rat jumps up at you. EEkk!"
   },
   {
     "id": 9,
-    "location": "Meeting Room 1",
+    "location": "Pantry",
     "north": 10,
     "south": null,
     "west": 8,
