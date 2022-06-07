@@ -170,7 +170,7 @@ const wholeDocument = async () => {
         .getElementById(charTypes[0])
         .addEventListener("click", function () {
           newPlayer.setType(charTypes[0]);
-          logText(`${charTypes[0]} is clicked`);
+          logText(`Welcome ${charTypes[0]}`);
         });
 
       document
@@ -191,6 +191,11 @@ const wholeDocument = async () => {
           newPlayer.setType(charTypes[3]);
           logText(`${charTypes[3]} is clicked`);
         });
+      // const introText = () => {
+      //   logText(
+      //     `${newPlayer.name} the ${newPlayer.type} you have left your resume at the HotDesk, the most popular hot desking workspace in all the land.. Now in order to reach your interview in time, you must face the chaos of HotDesk. Now dive into the  office space and return a victor with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer!`
+      //   );
+      // };
     };
     getCharTypes();
   });
@@ -233,12 +238,11 @@ const wholeDocument = async () => {
   };
 
   const displayDescription = () => {
-    logText(getRoomById(newPlayer.currentRoom).description);
     const currentRoom = getRoomById(newPlayer.currentRoom);
-    if (currentRoom[description] === null) {
+    if (currentRoom.description === null) {
       logText("This room is empty");
     } else {
-      console.log(currentRoom);
+      logText(getRoomById(newPlayer.currentRoom).description);
       document.querySelector("#insetbar").innerText = getRoomById(
         newPlayer.currentRoom
       ).location;
