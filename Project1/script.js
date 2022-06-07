@@ -16,6 +16,7 @@ const wholeDocument = async () => {
       return room.id === id;
     });
   };
+
   const charTypes = ["engineer", "student", "tutor", "manger"];
 
   class Character {
@@ -90,6 +91,15 @@ const wholeDocument = async () => {
       "Use North, South, East, West to change direction. Use Pick Up to collect items. Attack will give you options for a weapon"
     );
   });
+
+  // const attachElementToGameBox = (elem, attribute, attName, text) => {
+  //   const newElem = document.createElement(elem);
+  //   newElem.setAttribute(attribute, attName);
+  //   newElem.innerText = text;
+  //   document.querySelector(".gameBox").append(newElem);
+  // };
+  //Refactoring attempt
+
   const newPlayer = new Character();
 
   document.querySelector("#start-game").addEventListener("click", function () {
@@ -105,38 +115,89 @@ const wholeDocument = async () => {
     const typeDiv = document.createElement("div");
     typeDiv.className = "typeDiv";
     typeDiv.innerText = `Choose your player type\n`;
-    document.querySelector(".gameBox").append(typeDiv);
-    const playerSelection = (playerType) => {
-      let selectType = document.createElement("button");
-      selectType.className = "playerTypeSelect";
-      selectType.setAttribute("id", `${playerType}`);
-      selectType.innerText = playerType;
+    document.querySelector(".gameBox").append(typeDiv); // make 'create div' function
 
-      document.querySelector(".typeDiv").append(selectType);
+    const playerSelection = () => {
+      for (type of charTypes) {
+        let selectType = document.createElement("button");
+        selectType.className = "playerTypeSelect";
+        selectType.setAttribute("id", `${type}`);
+        selectType.innerText = type;
+
+        document.querySelector(".typeDiv").append(selectType);
+      }
     };
-    playerSelection(charTypes[0]);
-    playerSelection(charTypes[1]);
-    playerSelection(charTypes[2]);
-    playerSelection(charTypes[3]);
+    playerSelection();
 
     inputBar.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
         console.log(`Welcome ${e.target.value}`);
-        console.log(e.target.value);
         newPlayer.setName(inputBar.value);
-        console.log(newPlayer);
       }
     });
+    const getCharTypes = () => {
+      document
+        .getElementById(charTypes[0])
+        .addEventListener("click", function () {
+          newPlayer.setType(charTypes[0]);
+          console.log(`${charTypes[0]} is clicked`);
+        });
+
+      document
+        .getElementById(charTypes[1])
+        .addEventListener("click", function () {
+          newPlayer.setType(charTypes[1]);
+          console.log(`${charTypes[1]} is clicked`);
+        });
+      document
+        .getElementById(charTypes[2])
+        .addEventListener("click", function () {
+          newPlayer.setType(charTypes[2]);
+          console.log(`${charTypes[2]} is clicked`);
+        });
+      document
+        .getElementById(charTypes[3])
+        .addEventListener("click", function () {
+          newPlayer.setType(charTypes[3]);
+          console.log(`${charTypes[3]} is clicked`);
+        });
+    };
+    getCharTypes();
+
+    console.log(newPlayer.type);
+    // document.querySelector("#start-game").addEventListener("click", function () {
+    // const roomDiv = document.createElement("div");
+    // roomDiv.className = "roomDesc";
+    // roomDiv.innerText = `Enter your player name\n`;
+    // document.querySelector(".gameBox").append(roomDiv);
   });
 
-  document.querySelector(".typeDiv").addEventListener("click", function (e) {
-    e.preventDefault();
-  });
+  //   const getCharTypes = () => {
+  //     document.getElementById(charTypes);
+  //     for (type of charTypes) {
+  //       getCharTypes.type().addEventListener("click", function () {
+  //         console.log(`${type} is clicked`);
+  //       });
+  //     }
+  //   };
+  //   getCharTypes();
+  // });
+
+  //refactoring attempt
+
+  const ouch = [
+    "Ouch! That's the table. Head for the door",
+    "Watch the chairs",
+    "No way through here",
+    "Ouch! There's a wall",
+    "Pivot! Pivot!",
+    "Try another way",
+  ];
 
   const move = (direction) => {
     const currentRoom = getRoomById(newPlayer.currentRoom);
     if (currentRoom[direction] === null) {
-      console.log("Ouch");
+      logText(ouch[Math.floor(Math.random() * ouch.length)]);
     } else {
       newPlayer.currentRoom = currentRoom[direction];
       console.log(currentRoom);
@@ -145,6 +206,20 @@ const wholeDocument = async () => {
       ).location;
     }
   };
+
+  // const description = (description) => {
+  //   logText(getRoomById(newPlayer.currentRoom).description);
+  //   const currentRoom = getRoomById(newPlayer.currentRoom);
+  //   if (currentRoom[direction] === null) {
+  //     logText(ouch[Math.floor(Math.random() * ouch.length)]);
+  //   } else {
+  //     newPlayer.currentRoom = currentRoom[direction];
+  //     console.log(currentRoom);
+  //     document.querySelector("#insetbar").innerText = getRoomById(
+  //       newPlayer.currentRoom
+  //     ).location;
+  //   }
+  // };
 
   document.querySelector("#btn-north").addEventListener("click", function () {
     move("north");
