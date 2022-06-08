@@ -8,11 +8,11 @@
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": "The lift doors opening. Time to get going or you'll be late!"
+    "description": "currentRoom.description"
   },
   {
     "id": 1,
-    "location": "Hallway 1",
+    "location": "Office Lobby ",
     "north": 2,
     "south": null,
     "west": null,
@@ -22,7 +22,7 @@
       "type": "cookies",
       "amount": 5
     },
-    "description": "A long hallway stretches infront of you"
+    "description": "Office lobby tbc"
   },
   {
     "id": 2,
@@ -40,14 +40,14 @@
   },
   {
     "id": 3,
-    "location": "Hallway 2",
+    "location": "Hallway 1",
     "north": 4,
     "south": 2,
     "west": 16,
     "east": 7,
     "monsters": null,
     "treasure": null,
-    "description": "As you approch the main office, the sound of clicky keyboards hits your ears like a machine gun. The HotDesk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
+    "description": "A long hallway stretches infront of you.. As you approch the main office, the sound of clicky keyboards hits your ears like a machine gun. The HotDesk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
   },
 
   {
@@ -77,14 +77,14 @@
   },
   {
     "id": 6,
-    "location": "Hallway 3",
+    "location": "Hallway 2",
     "north": null,
     "south": null,
     "west": 10,
     "east": 5,
     "monsters": null,
     "treasure": null,
-    "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now"
+    "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now. your time is running out"
   },
   {
     "id": 7,

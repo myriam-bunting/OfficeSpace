@@ -17,7 +17,7 @@ const wholeDocument = async () => {
     });
   };
 
-  const charTypes = ["engineer", "student", "tutor", "manger"];
+  const charTypes = ["engineer", "student", "tutor", "manager"];
 
   class Character {
     constructor(
@@ -61,7 +61,7 @@ const wholeDocument = async () => {
     setName(playerName) {
       this.name = playerName;
     }
-    setCurentRoom() {
+    setCurrentRoom() {
       this.currentRoom = currentRoom;
     }
     setType(type) {
@@ -73,17 +73,21 @@ const wholeDocument = async () => {
       this.backpack += this.item;
     }
   }
+
   const scrollToBottom = (id) => {
     const gameBoxDiv = document.getElementById(id);
     gameBoxDiv.scrollTop = gameBoxDiv.scrollHeight;
   };
+
   const logText = (text) => {
     const anyText = document.createElement("p");
     anyText.innerText = text;
     document.querySelector(".gameBox").appendChild(anyText);
     scrollToBottom("gameBoxDiv");
   };
+
   logText(`Start game to begin`);
+
   const howToPlay = () => {
     logText(
       "HOW TO PLAY - Race through the HotDesk office to find your resume. Use the controls to navigate the obstacles"
@@ -138,7 +142,7 @@ const wholeDocument = async () => {
           console.log(type);
           if (newPlayer.name && newPlayer.type !== null) {
             logText(
-              `Welcome ${newPlayer.name} the ${newPlayer.type}!  You have left your resume at HotDesk... the most popular shared workspace in all the land... Now in order to reach your interview in time, you must wade through the chaos that is the HotDesk and return a victor with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer... GET A MOVE ON THEN!`
+              `Welcome ${newPlayer.name} the ${newPlayer.type}! You have left your resume at HotDesk... the most popular shared workspace in all the land... Now in order to reach your interview in time, you must wade through the chaos that is the HotDesk and return a victor with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer... GET A MOVE ON THEN!`
             );
           } else {
             alert("Please enter a name");
@@ -159,20 +163,25 @@ const wholeDocument = async () => {
     "Pivot! Pivot!",
     "Nothing to see here",
   ];
+  let ouchTimes = 0;
 
   const move = (direction) => {
     const currentRoom = getRoomById(newPlayer.currentRoom);
+    console.log(currentRoom);
+    console.log(newPlayer.currentRoom);
+    console.log(direction);
+    console.log(currentRoom[direction]);
 
     if (currentRoom[direction] === null) {
       logText(ouch[Math.floor(Math.random() * ouch.length)]);
     } else {
-      console.log(getRoomById(newPlayer.currentRoom).id);
       document.querySelector("#insetbar").innerText = getRoomById(
         newPlayer.currentRoom
       ).location;
+
       newPlayer.currentRoom = currentRoom[direction];
-      console.log(getRoomById(newPlayer.currentRoom).id);
     }
+    console.log(currentRoom.id);
   };
 
   const displayDescription = () => {
@@ -182,6 +191,8 @@ const wholeDocument = async () => {
         "Opps.. need to add my description.. Have a sandwich while you wait "
       );
     } else {
+      logText(getRoomById(newPlayer.currentRoom).description);
+
       document.querySelector("#insetbar").innerText = getRoomById(
         newPlayer.currentRoom
       ).location;
@@ -204,7 +215,6 @@ const wholeDocument = async () => {
   });
   document.querySelector("#btn-south").addEventListener("click", function () {
     move("south");
-
     displayDescription();
   });
 
