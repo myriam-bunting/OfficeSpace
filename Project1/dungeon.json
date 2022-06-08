@@ -8,11 +8,11 @@
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": "The lift doors open. Time to get going or you'll be late!"
+    "description": "The lift doors opening. Time to get going or you'll be late!"
   },
   {
     "id": 1,
-    "location": "Hallway",
+    "location": "Hallway 1",
     "north": 2,
     "south": null,
     "west": null,
@@ -40,10 +40,10 @@
   },
   {
     "id": 3,
-    "location": "Hallway",
+    "location": "Hallway 2",
     "north": 4,
-    "south": 16,
-    "west": null,
+    "south": 2,
+    "west": 16,
     "east": 7,
     "monsters": null,
     "treasure": null,
@@ -52,7 +52,7 @@
 
   {
     "id": 4,
-    "location": "Pantry",
+    "location": "Pantry 1",
     "north": null,
     "south": 3,
     "west": null,
@@ -73,11 +73,11 @@
     "east": 6,
     "monsters": null,
     "treasure": null,
-    "description": "Damn, you reach the desk by the window. Staring intensely at the current occupant makes him look up awkwardly from his screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
+    "description": "You reach the desk by the window. Staring intensely at the current occupant makes him look up awkwardly from his screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
   },
   {
     "id": 6,
-    "location": "Hallway",
+    "location": "Hallway 3",
     "north": null,
     "south": null,
     "west": 10,
@@ -95,7 +95,7 @@
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": "GA students have flooded the corridor! Time to choose a new path"
+    "description": "GA students are lounging around! Cables twist all around the floor. Watch your step.."
   },
   {
     "id": 8,
@@ -106,11 +106,11 @@
     "east": 9,
     "monsters": null,
     "treasure": null,
-    "description": "A second office space unfolds as you open the door. You search the first few desks for your resume. As you pull out the chair a rat jumps up at you. EEkk!"
+    "description": "A second office space unfolds as you slide open the glass door. You search the first few desks for your resume. As you pull out the chair a rat jumps up at you. EEkk!"
   },
   {
     "id": 9,
-    "location": "Pantry",
+    "location": "Pantry 2",
     "north": 10,
     "south": null,
     "west": 8,
@@ -131,7 +131,7 @@
     "east": 6,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "As you enter the work space, your breath condenses in the air... a chill runs down your spine as a wall of frozen air ensnares you... you reach for your jacket but drop it with the lost sensation of your fingers.. reaching down to pick it up you notice your legs are frozen solid to the ground. /n Choose an object to help yourself get free "
   },
   {
     "id": 11,
@@ -186,7 +186,7 @@
     "east": 17,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "description": "walking past this room you see an old colleague. They usher you in. It appears to be an office lunch party... YES! You think... all this searching is making you hungry.. You help yourself to one of the sandwiches laid out on the table.. /n as you do, all the people in the room stop and turn. Their eyes become fixated on you and your sandwich.. How will you get out of this one.. "
   },
   {
     "id": 16,

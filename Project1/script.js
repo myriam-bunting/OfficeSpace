@@ -64,7 +64,7 @@ const wholeDocument = async () => {
     setCurentRoom() {
       this.currentRoom = currentRoom;
     }
-    setType() {
+    setType(type) {
       this.type = type;
     }
     fight() {}
@@ -73,65 +73,34 @@ const wholeDocument = async () => {
       this.backpack += this.item;
     }
   }
-
+  const scrollToBottom = (id) => {
+    const gameBoxDiv = document.getElementById(id);
+    gameBoxDiv.scrollTop = gameBoxDiv.scrollHeight;
+  };
   const logText = (text) => {
     const anyText = document.createElement("p");
     anyText.innerText = text;
     document.querySelector(".gameBox").appendChild(anyText);
+    scrollToBottom("gameBoxDiv");
   };
-
-  document.querySelector("#how-to-play").addEventListener("click", function () {
+  logText(`Start game to begin`);
+  const howToPlay = () => {
     logText(
       "HOW TO PLAY - Race through the HotDesk office to find your resume. Use the controls to navigate the obstacles"
     );
-  });
+  };
+  document.querySelector("#how-to-play").addEventListener("click", howToPlay);
 
-  document.querySelector("#controls").addEventListener("click", function () {
+  const controls = () => {
     logText(
       "Use North, South, East, West to change direction. Use Pick Up to collect items. Attack will give you options for a weapon"
     );
-  });
-
-  // const attachElementToGameBox = (elem, attribute, attName, text) => {
-  //   const newElem = document.createElement(elem);
-  //   newElem.setAttribute(attribute, attName);
-  //   newElem.innerText = text;
-  //   document.querySelector(".gameBox").append(newElem);
-  // };
-  //Refactoring attempt
+  };
+  document.querySelector("#controls").addEventListener("click", controls);
 
   const newPlayer = new Character();
 
-  // const startGame = () => {
-  //   const inputDiv = document.createElement("div");
-  //   inputDiv.className = "inputDiv";
-  //   inputDiv.innerText = `Enter your player name\n`;
-  //   document.querySelector(".gameBox").append(inputDiv);
-
-  //   const inputBar = document.createElement("input");
-  //   inputBar.className = "inputBar";
-  //   inputDiv.append(inputBar);
-
-  //   const typeDiv = document.createElement("div");
-  //   typeDiv.className = "typeDiv";
-  //   typeDiv.innerText = `Choose your player type\n`;
-  //   document.querySelector(".gameBox").append(typeDiv); // make 'create div' function
-
-  //   const playerSelection = () => {
-  //     for (type of charTypes) {
-  //       let selectType = document.createElement("button");
-  //       selectType.className = "playerTypeSelect";
-  //       selectType.setAttribute("id", `${type}`);
-  //       selectType.innerText = type;
-
-  //       document.querySelector(".typeDiv").append(selectType);
-  //     }
-  //   };
-  // };
-
-  // document.querySelector("#start-game").addEventListener("click", startGame);
-
-  document.querySelector("#start-game").addEventListener("click", function () {
+  const startGame = () => {
     const inputDiv = document.createElement("div");
     inputDiv.className = "inputDiv";
     inputDiv.innerText = `Enter your player name\n`;
@@ -147,71 +116,40 @@ const wholeDocument = async () => {
     document.querySelector(".gameBox").append(typeDiv); // make 'create div' function
 
     const playerSelection = () => {
-      for (type of charTypes) {
+      const addName = (e) => {
+        if (e.key === "Enter") {
+          newPlayer.setName(inputBar.value);
+        }
+      };
+
+      inputBar.addEventListener("keydown", addName);
+
+      charTypes.forEach((type) => {
         let selectType = document.createElement("button");
         selectType.className = "playerTypeSelect";
         selectType.setAttribute("id", `${type}`);
         selectType.innerText = type;
 
         document.querySelector(".typeDiv").append(selectType);
-      }
+
+        selectType.addEventListener("click", function () {
+          newPlayer.setType(type);
+          newPlayer.setName(inputBar.value);
+          console.log(type);
+          if (newPlayer.name && newPlayer.type !== null) {
+            logText(
+              `Welcome ${newPlayer.name} the ${newPlayer.type}!  You have left your resume at HotDesk... the most popular shared workspace in all the land... Now in order to reach your interview in time, you must wade through the chaos that is the HotDesk and return a victor with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer... GET A MOVE ON THEN!`
+            );
+          } else {
+            alert("Please enter a name");
+          }
+        });
+      });
     };
     playerSelection();
+  };
 
-    inputBar.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        console.log(`Welcome ${e.target.value}`);
-        newPlayer.setName(inputBar.value);
-      }
-    });
-
-    const getCharTypes = () => {
-      document
-        .getElementById(charTypes[0])
-        .addEventListener("click", function () {
-          newPlayer.setType(charTypes[0]);
-          logText(`Welcome ${charTypes[0]}`);
-        });
-
-      document
-        .getElementById(charTypes[1])
-        .addEventListener("click", function () {
-          newPlayer.setType(charTypes[1]);
-          logText(`${charTypes[1]} is clicked`);
-        });
-      document
-        .getElementById(charTypes[2])
-        .addEventListener("click", function () {
-          newPlayer.setType(charTypes[2]);
-          logText(`${charTypes[2]} is clicked`);
-        });
-      document
-        .getElementById(charTypes[3])
-        .addEventListener("click", function () {
-          newPlayer.setType(charTypes[3]);
-          logText(`${charTypes[3]} is clicked`);
-        });
-      // const introText = () => {
-      //   logText(
-      //     `${newPlayer.name} the ${newPlayer.type} you have left your resume at the HotDesk, the most popular hot desking workspace in all the land.. Now in order to reach your interview in time, you must face the chaos of HotDesk. Now dive into the  office space and return a victor with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer!`
-      //   );
-      // };
-    };
-    getCharTypes();
-  });
-
-  //   const getCharTypes = () => {
-  //     document.getElementById(charTypes);
-  //     for (type of charTypes) {
-  //       getCharTypes.type().addEventListener("click", function () {
-  //         console.log(`${type} is clicked`);
-  //       });
-  //     }
-  //   };
-  //   getCharTypes();
-  // });
-
-  //refactoring attempt
+  document.querySelector("#start-game").addEventListener("click", startGame);
 
   const ouch = [
     "Ouch! That's the table. Head for the door",
@@ -239,10 +177,11 @@ const wholeDocument = async () => {
 
   const displayDescription = () => {
     const currentRoom = getRoomById(newPlayer.currentRoom);
-    if (currentRoom.description === null) {
-      logText("This room is empty");
+    if (currentRoom.description === "null") {
+      logText(
+        "Opps.. need to add my description.. Have a sandwich while you wait "
+      );
     } else {
-      logText(getRoomById(newPlayer.currentRoom).description);
       document.querySelector("#insetbar").innerText = getRoomById(
         newPlayer.currentRoom
       ).location;
@@ -250,8 +189,8 @@ const wholeDocument = async () => {
   };
 
   document.querySelector("#btn-north").addEventListener("click", function () {
-    displayDescription();
     move("north");
+    displayDescription();
   });
 
   document.querySelector("#btn-west").addEventListener("click", function () {
@@ -265,7 +204,10 @@ const wholeDocument = async () => {
   });
   document.querySelector("#btn-south").addEventListener("click", function () {
     move("south");
+
     displayDescription();
   });
+
+  scrollToBottom("gameBoxDiv");
 };
 wholeDocument();

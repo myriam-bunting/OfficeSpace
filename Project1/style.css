@@ -6,10 +6,7 @@
 body {
   text-align: center;
   padding: 70px;
-  background-image: (
-    url=
-      "https://i.guim.co.uk/img/media/b563ac5db4b4a4e1197c586bbca3edebca9173cd/0_12_3307_1985/master/3307.jpg?width=645&quality=45&auto=format&fit=max&dpr=2&s=de31e0b8236f8e2c605ec1b113fceece"
-  );
+  background-color: rgb(237, 224, 207);
 }
 h1 {
   font-weight: bold;
@@ -63,7 +60,7 @@ p {
   padding: 2px;
   display: block;
   position: relative;
-  margin: 2em auto;
+  margin: 1em auto;
 }
 
 #controls {
