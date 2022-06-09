@@ -266,7 +266,6 @@ const wholeDocument = async () => {
       const objectsText = getRoomById(newPlayer.currentRoom).weapon?.[
         newPlayer.type
       ]?.objects;
-      console.log(objectsText);
 
       for (let object in objectsText) {
         let weaponButton = document.createElement("button");
@@ -276,19 +275,26 @@ const wholeDocument = async () => {
         console.log(object);
 
         weaponButton.addEventListener("click", function () {
-          if (getRoomById(newPlayer.currentRoom) === 10) {
+          if (newPlayer.currentRoom === 10) {
+            console.log(newPlayer.currentRoom.id);
             logText(
-              `You just reach your jacket with your ${object} but warming up takes time`
+              `You just reach your jacket with your ${object} but warming up takes time. Keep going!`
+            );
+          } else {
+            logText(
+              `You hit them with a ${object}. Good distraction.. now flee!`
             );
           }
-          logText(
-            `You hit them with a ${object}. Good distraction.. now flee!`
-          );
         });
         scrollToBottom("gameBoxDiv");
       }
     }
   });
+  const moveDisplay = document.createElement("div");
+  moveDisplay.setAttribute("id", "moves");
+  moveDisplay.innerText = `MOVES: ${newPlayer.moves}`;
+  document.querySelector("#insetbar").appendChild(moveDisplay);
+  console.log(document.querySelector("#moves"));
 
   window.addEventListener("keydown", function (e) {
     switch (e.keycode) {

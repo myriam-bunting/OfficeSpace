@@ -96,3 +96,9 @@ p {
   text-align: left;
   font-size: smaller;
 }
+
+#moves {
+  display: flex;
+  float: right;
+  padding-right: 2em;
+}
