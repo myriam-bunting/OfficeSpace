@@ -146,7 +146,6 @@ const wholeDocument = async () => {
 
       charTypes.forEach((type) => {
         let selectType = document.createElement("button");
-        selectType.className = "playerTypeSelect";
         selectType.setAttribute("id", `${type}`);
         selectType.innerText = type;
 
@@ -179,7 +178,6 @@ const wholeDocument = async () => {
     "Pivot! Pivot!",
     "Nothing to see here",
   ];
-  let ouchTimes = 0;
 
   const move = (direction) => {
     if (newPlayer.moves <= 0) {
@@ -202,7 +200,7 @@ const wholeDocument = async () => {
 
   const displayDescription = () => {
     const currentRoom = getRoomById(newPlayer.currentRoom);
-    if (currentRoom.description === "null") {
+    if (currentRoom.description === "") {
       logText(
         "Opps.. need to add my description.. Have a sandwich while you wait "
       );
@@ -244,19 +242,30 @@ const wholeDocument = async () => {
   });
 
   document.querySelector("#btn-repond").addEventListener("click", function () {
+    let motivationText = getRoomById(newPlayer.currentRoom).weapon[
+      newPlayer.type
+    ].motivation;
+    console.log(
+      getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].motivation
+    );
+
+    motivationText.forEach((line) => {
+      let lineButton = document.createElement("button");
+      lineButton.setAttribute("id", "lineButton");
+      lineButton.innerText = line;
+      document.querySelector(".gameBox").appendChild(lineButton);
+
+      // document.querySelector(".typeDiv").append(lineButton)
+    });
+
     // if (getRoomById(newPlayer.currentRoom).weapon == null) {
     //   logText(`No weapons here`);
     //   console.log(`No weapons here`);
     // } else if (
-    const motivationText = getRoomById(newPlayer.currentRoom).weapon[
-      newPlayer.type
-    ].motivation;
-
-    for (line of motivationText) {
-      document.createElement("button").innerText = line;
-      logText(line);
-    }
-
+    // for(lines of motivationText){
+    //   let
+    // }
+    // logText((document.createElement("button").innerText = motivationText));
     // ) {
     //   logText(`Choose a response:`);
     //   getRoomById(newPlayer.currentRoom).weapon[
