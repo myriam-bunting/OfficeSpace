@@ -26,11 +26,10 @@ const wholeDocument = async () => {
       health = 100,
       weapon = [],
       weaponDamage = 10,
-      moves = 0,
+      moves = 30,
       backpack = [],
       wallet = 0,
-      currentRoom = 0,
-      item = []
+      currentRoom = 0
     ) {
       this.name = name;
       this.type = type;
@@ -41,7 +40,6 @@ const wholeDocument = async () => {
       this.backpack = backpack;
       this.wallet = wallet;
       this.currentRoom = currentRoom;
-      this.item = item;
     }
     getName() {
       return this.name;
@@ -64,13 +62,23 @@ const wholeDocument = async () => {
     setCurrentRoom() {
       this.currentRoom = currentRoom;
     }
+    useMove() {
+      this.moves--;
+      console.log(this.moves);
+    }
     setType(type) {
       this.type = type;
     }
     fight() {}
 
-    pickUpItem() {
-      this.backpack += this.item;
+    pickUpItem(item) {
+      this.backpack.push(item);
+      if (item.type === "cookie" || item.type === "milo") {
+        this.moves += item.amount;
+        logText(`The ${item.type} has revived you`);
+      } else if (item.type === "resume") {
+        logText(`Game over, your score is ${this.moves}`);
+      }
     }
   }
 
@@ -102,9 +110,11 @@ const wholeDocument = async () => {
   };
   document.querySelector("#controls").addEventListener("click", controls);
 
-  const newPlayer = new Character();
+  let newPlayer = new Character();
 
   const startGame = () => {
+    newPlayer = new Character();
+    document.querySelector(".gameBox").innerHTML = "";
     const inputDiv = document.createElement("div");
     inputDiv.className = "inputDiv";
     inputDiv.innerText = `Enter your player name\n`;
@@ -166,12 +176,12 @@ const wholeDocument = async () => {
   let ouchTimes = 0;
 
   const move = (direction) => {
+    if (newPlayer.moves <= 0) {
+      logText("Game over, Press start game to try again");
+      return;
+    }
     const currentRoom = getRoomById(newPlayer.currentRoom);
-    console.log(currentRoom);
-    console.log(newPlayer.currentRoom);
-    console.log(direction);
-    console.log(currentRoom[direction]);
-
+    newPlayer.useMove();
     if (currentRoom[direction] === null) {
       logText(ouch[Math.floor(Math.random() * ouch.length)]);
     } else {
@@ -180,8 +190,8 @@ const wholeDocument = async () => {
       ).location;
 
       newPlayer.currentRoom = currentRoom[direction];
+      displayDescription();
     }
-    console.log(currentRoom.id);
   };
 
   const displayDescription = () => {
@@ -201,21 +211,30 @@ const wholeDocument = async () => {
 
   document.querySelector("#btn-north").addEventListener("click", function () {
     move("north");
-    displayDescription();
   });
 
   document.querySelector("#btn-west").addEventListener("click", function () {
     move("west");
-    displayDescription();
   });
 
   document.querySelector("#btn-east").addEventListener("click", function () {
     move("east");
-    displayDescription();
   });
   document.querySelector("#btn-south").addEventListener("click", function () {
     move("south");
-    displayDescription();
+  });
+
+  document.querySelector("#btn-pickUp").addEventListener("click", function () {
+    if (getRoomById(newPlayer.currentRoom).treasure !== null) {
+      logText(
+        `You picked up a ${getRoomById(newPlayer.currentRoom).treasure.type}`
+      );
+      newPlayer.pickUpItem(getRoomById(newPlayer.currentRoom).treasure);
+      getRoomById(newPlayer.currentRoom).treasure = null;
+    } else {
+      logText("There is no treasure in this room");
+    }
+    newPlayer.useMove();
   });
 
   scrollToBottom("gameBoxDiv");
