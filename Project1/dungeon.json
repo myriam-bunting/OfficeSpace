@@ -73,7 +73,7 @@
           "Can't wait till the holidays!"
         ],
         "objects": {
-          "knowledge": 5,
+          "fact": 5,
           "whiteboard-marker": 5,
           "mug": 10
         }
@@ -85,7 +85,7 @@
           "Hello there.. umm...Samantha?"
         ],
         "objects": {
-          "programmer-memes": 5,
+          "programmer-meme": 5,
           "stylis": 2,
           "laptop-charger": 7
         }
@@ -153,9 +153,9 @@
     "id": 7,
     "location": "Couches",
     "north": 5,
-    "south": 8,
+    "south": null,
     "west": 3,
-    "east": null,
+    "east": 8,
     "monsters": null,
     "treasure": {
       "type": "laptop cable",
@@ -167,9 +167,9 @@
   {
     "id": 8,
     "location": "HotDesk Zone 2",
-    "north": 7,
+    "north": null,
     "south": null,
-    "west": null,
+    "west": 7,
     "east": 9,
     "monsters": {
       "name": "Rattus",
@@ -193,14 +193,14 @@
       },
       "tutor": {
         "objects": {
-          "knowledge": 5,
+          "fact": 5,
           "whiteboard-marker": 5,
           "mug": 10
         }
       },
       "engineer": {
         "objects": {
-          "programmer-memes": 5,
+          "programmer-meme": 5,
           "stylis": 2,
           "laptop-charger": 7
         }
@@ -254,20 +254,20 @@
 
       "tutor": {
         "objects": {
-          "knowledge": 5,
+          "fact": 5,
           "whiteboard-marker": 5,
           "mug": 10
         }
       },
       "engineer": {
         "objects": {
-          "programmer-memes": 5,
+          "programmer-meme": 5,
           "stylis": 2,
           "laptop-charger": 7
         }
       }
     },
-    "description": "As you enter the work space, your breath condenses in the air... a chill runs down your spine as a wall of frozen air ensnares you... you reach for your jacket but drop it with the lost sensation of your fingers.. reaching down to pick it up you notice your legs are frozen solid to the ground. /n Choose an object to help yourself get free "
+    "description": "As you enter the work space, the AirCon makes your your breath condense in the air... a chill runs down your spine as a wall of frozen air wraps around you... you reach for your jacket but drop it with the lost sensation of your fingers.. reaching down to pick it up you notice your legs are frozen solid to the ground.. Choose an object to help retrieve your jacket and warm up.. "
   },
   {
     "id": 11,
@@ -282,7 +282,7 @@
       "amount": 10
     },
     "weapon": null,
-    "description": " No more of this madness! You need to make up time. You found the fire excape to reach the second level of HotDesk. Level UP! /n Don't forget your dah-bao cookies!"
+    "description": " No more of this madness! You need to make up time. You found the fire excape to reach the second level of HotDesk. Level UP! Don't forget your dah-bao cookies!"
   },
   {
     "id": 12,
@@ -294,7 +294,7 @@
     "monsters": null,
     "treasure": null,
     "weapon": null,
-    "description": "Checking all the stalls, you see a familiar face. They greet you with a worried expression... 'Are you Okay? You look sick?'... upon looking in the mirror you suddenly realise you have just forgotten your makeup.. Quickly change rooms.."
+    "description": "Checking all the stalls, you see a familiar face. They greet you with a worried expression... 'Are you Okay? You look sick?'... upon looking in the mirror you realise you have just forgotten your makeup.. Quickly change rooms.."
   },
   {
     "id": 13,
@@ -311,12 +311,7 @@
           "I just wrote 10 lines of code without searching google",
           "Turns out I had just missed to a semi-colon on line 2567",
           " I don't know what's worse, my design skills, or my design after I try to make it with CSS"
-        ],
-        "objects": {
-          "programmer-memes": 5,
-          "stylis": 2,
-          "laptop-charger": 7
-        }
+        ]
       }
     },
     "description": "Entering the dark room, you hear cheers of football fans.. the glowing screen lights up a few familiar faces .. They're software engineers you overheard chatting about pull requests yesterday.. but how are they playing FIFA already.. surely it's only 2pm. You check your watch.. Oh dear! You're running out of time!"
@@ -412,7 +407,7 @@
       "type": "sandwich",
       "amount": "10"
     },
-    "description": "Walking past this room you see an old colleague. They usher you in. It appears to be an office lunch party... YES! You think... all this searching is making you hungry.. You help yourself to one of the sandwiches laid out on the table.. /n as you do, all the people in the room stop and turn. Their eyes become fixated on you and your sandwich.. How will you get out of this one.. "
+    "description": "Walking past this room you see an old colleague. They usher you in. It appears to be an office lunch party... YES! You think... all this searching is making you hungry.. You help yourself to one of the sandwiches laid out on the table..   as you do, all the people in the room stop and turn. Their eyes become fixated on you and your sandwich.. How will you get out of this one.. "
   },
   {
     "id": 16,
@@ -422,7 +417,10 @@
     "west": null,
     "east": 12,
     "monsters": null,
-    "treasure": null,
+    "treasure": {
+      "type": "cookie",
+      "amount": "3"
+    },
     "description": "Could someone have cleared it away? You scour the janitor's room but no sign of your document. The serach continues"
   },
   {
@@ -437,6 +435,6 @@
       "type": "resume",
       "amount": "50"
     },
-    "description": "You've made it! /n You slide out the chair to find a pristine resume. The refreshing feeling of success and wave of relief is interupted by a distinct sound.. As you turn around slowly, you realise you were in fact sitting at the first desk in front of the elevators.. "
+    "description": "You've made it! You slide out the chair to find a pristine resume. The refreshing feeling of success and wave of relief is interupted by a distinct sound.. As you turn around slowly, you realise you were in fact sitting at the first desk in front of the elevators.. "
   }
 ]

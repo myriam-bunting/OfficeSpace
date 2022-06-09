@@ -67,7 +67,6 @@ const wholeDocument = async () => {
     setType(type) {
       this.type = type;
     }
-    fight() {}
 
     pickUpItem(item) {
       this.backpack.push(item);
@@ -108,7 +107,7 @@ const wholeDocument = async () => {
 
   const controls = () => {
     logText(
-      "Use North, South, East, West buttons to change direction. Use Pick Up to collect items. Attack will give you options to choose a weapon"
+      "Use North, South, East, West buttons to change direction. Use Pick Up to collect items. Respond will give you options to choose an verbal or physical response"
     );
   };
   document.querySelector("#controls").addEventListener("click", controls);
@@ -130,12 +129,13 @@ const wholeDocument = async () => {
     const typeDiv = document.createElement("div");
     typeDiv.className = "typeDiv";
     typeDiv.innerText = `Choose your player type\n`;
-    document.querySelector(".gameBox").append(typeDiv); // make 'create div' function
+    document.querySelector(".gameBox").append(typeDiv);
 
     const playerSelection = () => {
       const addName = (e) => {
         if (e.key === "Enter") {
           newPlayer.setName(inputBar.value);
+          console.log(newPlayer.playerName);
         }
       };
 
@@ -241,7 +241,6 @@ const wholeDocument = async () => {
   document.querySelector("#btn-repond").addEventListener("click", function () {
     if (getRoomById(newPlayer.currentRoom).weapon === null) {
       logText(`No weapons here`);
-      console.log(`No weapons here`);
       return;
     }
     if (getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].motivation) {
@@ -255,47 +254,57 @@ const wholeDocument = async () => {
         lineButton.innerText = line;
         document.querySelector(".gameBox").appendChild(lineButton);
         lineButton.addEventListener("click", function () {
-          logText(`You murrmur ${line} Now get a move on!`);
+          logText(`You murrmur... ${line} Now get a move on!`);
         });
         scrollToBottom("gameBoxDiv");
       });
     }
+
     if (getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].objects) {
       console.log("object");
 
       const objectsText = getRoomById(newPlayer.currentRoom).weapon?.[
         newPlayer.type
-      ]?.object;
+      ]?.objects;
+      console.log(objectsText);
 
-      objectsText.forEach((object) => {
+      for (let object in objectsText) {
         let weaponButton = document.createElement("button");
         weaponButton.setAttribute("class", "weaponButton");
-        weaponButton.innerText = object;
+        weaponButton.innerText = [object];
         document.querySelector(".gameBox").appendChild(weaponButton);
+        console.log(object);
 
         weaponButton.addEventListener("click", function () {
-          logText(`You throw a ${object}`);
+          if (getRoomById(newPlayer.currentRoom) === 10) {
+            logText(
+              `You just reach your jacket with your ${object} but warming up takes time`
+            );
+          }
+          logText(
+            `You hit them with a ${object}. Good distraction.. now flee!`
+          );
         });
         scrollToBottom("gameBoxDiv");
-      });
+      }
     }
   });
 
   window.addEventListener("keydown", function (e) {
     switch (e.keycode) {
-      case 38:
+      case e.key === "38":
         move("north");
         break;
 
-      case 37:
+      case e.key === "37":
         move("west");
         break;
 
-      case 39:
+      case e.key === "39":
         move("east");
         break;
 
-      case 40:
+      case e.key === "40":
         move("south");
     }
   });
