@@ -9,7 +9,7 @@
     "monsters": null,
     "treasure": null,
     "weapon": null,
-    "description": "You're in the LIFT LOBBY"
+    "description": "You're in the Lift Lobby"
   },
   {
     "id": 1,
@@ -89,9 +89,9 @@
           "stylis": 2,
           "laptop-charger": 7
         }
-      },
-      "description": "You are passing the Admin desk. Cheryl says hello! What do you do?"
-    }
+      }
+    },
+    "description": "You are passing the Admin desk. Cheryl says hello! What do you do?"
   },
 
   {

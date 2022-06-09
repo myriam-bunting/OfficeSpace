@@ -75,7 +75,7 @@ const wholeDocument = async () => {
     setType(type) {
       this.type = type;
     }
-    fight(weapon) {}
+    fight() {}
 
     pickUpItem(item) {
       this.backpack.push(item);
@@ -244,30 +244,38 @@ const wholeDocument = async () => {
   });
 
   document.querySelector("#btn-repond").addEventListener("click", function () {
-    if (
-      getRoomById(newPlayer.currentRoom).weapon == "string" &&
-      getRoomById(newPlayer.currentRoom).weapon !== null
-    ) {
-      logText(`Choose a response:`);
-      getRoomById(newPlayer.currentRoom).weapon[
-        newPlayer.type
-      ].motivation.forEach(logText);
-      console.log(
-        getRoomById(newPlayer.currentRoom).weapon[
-          newPlayer.type
-        ].motivation.forEach(logText)
-      );
-    } else {
-      logText(`Choose a weapon:`);
-      getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].forEach(
-        logText
-      );
-      console.log(
-        getRoomById(newPlayer.currentRoom).weapon[
-          newPlayer.type
-        ].objects.forEach(logText)
-      );
+    // if (getRoomById(newPlayer.currentRoom).weapon == null) {
+    //   logText(`No weapons here`);
+    //   console.log(`No weapons here`);
+    // } else if (
+    const motivationText = getRoomById(newPlayer.currentRoom).weapon[
+      newPlayer.type
+    ].motivation;
+
+    for (line of motivationText) {
+      document.createElement("button").innerText = line;
+      logText(line);
     }
+
+    // ) {
+    //   logText(`Choose a response:`);
+    //   getRoomById(newPlayer.currentRoom).weapon[
+    //     newPlayer.type
+    //   ].motivation.forEach(logText);
+    //   console.log(
+    //     getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].motivation
+    //   );
+    // } else {
+    //   logText(`Choose a weapon:`);
+    //   getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].forEach(
+    //     logText
+    //   );
+    //   console.log(
+    //     `this is my type specific weapons ${
+    //       getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].objects
+    //     }`
+    //   );
+    // }
   });
 
   scrollToBottom("gameBoxDiv");
