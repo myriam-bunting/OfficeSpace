@@ -45,9 +45,9 @@
     "weapon": {
       "manager": {
         "motivation": [
-          "Leaving so early?",
-          "Are you finished yet?",
-          "Well, go talk to Dean, he'll know what to do"
+          "Makaan?",
+          "What would you say...you do here?",
+          "Hello, how are you? Gotta run!"
         ],
         "objects": {
           "fluffing": 2,
@@ -56,8 +56,8 @@
       },
       "student": {
         "motivation": [
-          "I'll be working all night",
-          "BUT WHY IS IT RETURNING UNDEFINED",
+          "No time to chat.. gotta get to the homework",
+          "...But why is my code working",
           "Can't wait till the holidays"
         ],
         "objects": {
@@ -68,9 +68,9 @@
       },
       "tutor": {
         "motivation": [
-          "Ask me anything, anytime",
-          "Are your variables declared correctly",
-          "Can't wait till the holidays"
+          "Ask me anything, anytime!",
+          "Hello, are your variables declared correctly?",
+          "Can't wait till the holidays!"
         ],
         "objects": {
           "knowledge": 5,
@@ -80,9 +80,9 @@
       },
       "engineer": {
         "motivation": [
-          "I just wrote 10 lines of code without searching google",
-          "Turns out I had just missed to csemi-colon on line 2567",
-          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+          "I once wrote 10 lines of code without using stack overflow... wink.",
+          "The 970 is never on time these days. Gotta make an app for that..",
+          "Hello there.. umm...Samantha?"
         ],
         "objects": {
           "programmer-memes": 5,
@@ -91,7 +91,7 @@
         }
       }
     },
-    "description": "You are passing the Admin desk. Cheryl says hello! What do you do?"
+    "description": "You are passing the Admin desk. Cheryl says hello.. What do you say.."
   },
 
   {
@@ -130,7 +130,10 @@
     "west": 4,
     "east": 6,
     "monsters": null,
-    "treasure": null,
+    "treasure": {
+      "type": "dude",
+      "amount": "5"
+    },
     "weapon": null,
     "description": "You reach the desk by the window... You are sure you were sitting here yesterday... Staring intensely at the current occupant makes them look up awkwardly from their screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
   },
@@ -144,7 +147,7 @@
     "monsters": null,
     "treasure": null,
     "weapon": null,
-    "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now. your time is running out"
+    "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now. your time is running out as you start running down the seemingly endless hallway.. "
   },
   {
     "id": 7,
@@ -176,22 +179,12 @@
     "treasure": null,
     "weapon": {
       "manager": {
-        "motivation": [
-          "Leaving so early?",
-          "Can you stay back for a bit, I have a dinner",
-          "Well, go talk to Dean, he'll know what to do"
-        ],
         "objects": {
           "computer": 10,
           "delegation": 5
         }
       },
       "student": {
-        "motivation": [
-          "I'll be working all night",
-          "BUT WHY IS IT RETURNING UNDEFINED",
-          "Can't wait till the holidays"
-        ],
         "objects": {
           "calculator": 5,
           "pencil": 2,
@@ -199,11 +192,6 @@
         }
       },
       "tutor": {
-        "motivation": [
-          "Ask me anything, anytime",
-          "Are your variables declared correctly",
-          "Can't wait till the holidays"
-        ],
         "objects": {
           "knowledge": 5,
           "whiteboard-marker": 5,
@@ -211,11 +199,6 @@
         }
       },
       "engineer": {
-        "motivation": [
-          "I just wrote 10 lines of code without searching google",
-          "Turns out I had just missed to csemi-colon on line 2567",
-          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
-        ],
         "objects": {
           "programmer-memes": 5,
           "stylis": 2,
@@ -294,13 +277,16 @@
     "west": 12,
     "east": 13,
     "monsters": null,
-    "treasure": null,
+    "treasure": {
+      "type": "cookie",
+      "amount": 10
+    },
     "weapon": null,
-    "description": " No more of this madness! You need to make up time. You found the fire excape to reach the second level of HotDesk. Level UP!"
+    "description": " No more of this madness! You need to make up time. You found the fire excape to reach the second level of HotDesk. Level UP! /n Don't forget your dah-bao cookies!"
   },
   {
     "id": 12,
-    "location": "Office Space",
+    "location": "Washroom",
     "north": null,
     "south": null,
     "west": 16,
@@ -308,7 +294,7 @@
     "monsters": null,
     "treasure": null,
     "weapon": null,
-    "description": "Cubicle alert! "
+    "description": "Checking all the stalls, you see a familiar face. They greet you with a worried expression... 'Are you Okay? You look sick?'... upon looking in the mirror you suddenly realise you have just forgotten your makeup.. Quickly change rooms.."
   },
   {
     "id": 13,
@@ -324,7 +310,7 @@
         "motivation": [
           "I just wrote 10 lines of code without searching google",
           "Turns out I had just missed to a semi-colon on line 2567",
-          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+          " I don't know what's worse, my design skills, or my design after I try to make it with CSS"
         ],
         "objects": {
           "programmer-memes": 5,
@@ -333,7 +319,7 @@
         }
       }
     },
-    "description": "Entering the dark room, you hear cheers of football fans.. the glowing screen lights up a few familiar faces .. They're software engineers you overheard chatting about pull requests yesterday.. but how are they playing FIFA already.. surely it's only 2pm. You check your watch.. Oh dear! You're running out of time! Can you ask them for  directions?"
+    "description": "Entering the dark room, you hear cheers of football fans.. the glowing screen lights up a few familiar faces .. They're software engineers you overheard chatting about pull requests yesterday.. but how are they playing FIFA already.. surely it's only 2pm. You check your watch.. Oh dear! You're running out of time!"
   },
   {
     "id": 14,
@@ -378,7 +364,7 @@
         }
       }
     },
-    "description": "It's thesis submition time and the printers have jammed... yet again... causing a commotion of office ladies fussing over the solution... Trays of paper are being pulled here and there. Distracted as you carefully step over a large box of paper reams... you are confronted with a mountain of crumpled paper ripped out and tossed aside in frustration... The mass suddenly starts moving towards you.. seemingly falling.. but then you notice the lumpy eyes and grin full of staples. It's go time"
+    "description": "It's thesis submition time and the printers have jammed... yet again... causing a commotion of office ladies fussing over the solution... Trays of paper are being pulled here and there... Distracted as you carefully step over a large box of paper reams... you are confronted with a mountain of crumpled paper ripped out and tossed aside in frustration... The mass suddenly starts moving towards you.. seemingly falling.. but then you notice the lumpy eyes and grin full of staples. It's go time"
   },
   {
     "id": 15,
@@ -395,46 +381,49 @@
     "weapon": {
       "manager": {
         "motivation": [
-          "Leaving so early?",
-          "Can you stay back for a bit, I have a dinner",
-          "Well, go talk to Dean, he'll know what to do"
+          "Mmmm very good.. as you were ",
+          "Ohhh yeahhh! Ham and cheese is always winner and leave the room",
+          "Where did you get the budget for this?"
         ]
       },
       "student": {
         "motivation": [
-          "I'll be working all night",
-          "BUT WHY IS IT RETURNING UNDEFINED",
-          "Can't wait till the holidays"
+          "Take a bite shyly and edge away from the people with the sandwich",
+          "Give me a break... I'm a student",
+          "Ohhh yeahhh! Ham and cheese is always winner and leave the room"
         ]
       },
       "tutor": {
         "motivation": [
-          "Ask me anything, anytime",
-          "Are your variables declared correctly...",
-          "Can't wait till the holidays"
+          "Take a bite shyly and edge away from the people with the sandwich",
+          "Free lunch on a tutor's salary. Winning!",
+          "Ohhh yeahhh! Ham and cheese is always winner and leave the room"
         ]
       },
       "engineer": {
         "motivation": [
-          "I just wrote 10 lines of code without searching google",
-          "Turns out I had just missed to csemi-colon on line 2567",
-          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+          "..Don't you hate it when you get crumbs stuck in your keyboard.. ",
+          "Now that's what I call full stack",
+          "Take a bite shyly and edge away from the people with the sandwich"
         ]
       }
     },
-    "treasure": null,
+    "treasure": {
+      "type": "sandwich",
+      "amount": "10"
+    },
     "description": "Walking past this room you see an old colleague. They usher you in. It appears to be an office lunch party... YES! You think... all this searching is making you hungry.. You help yourself to one of the sandwiches laid out on the table.. /n as you do, all the people in the room stop and turn. Their eyes become fixated on you and your sandwich.. How will you get out of this one.. "
   },
   {
     "id": 16,
-    "location": "Office Space",
+    "location": "Lost and Found",
     "north": null,
     "south": null,
     "west": null,
     "east": 12,
     "monsters": null,
     "treasure": null,
-    "description": "Everyone is at their desk working hard. You scour the room but no sign of your document"
+    "description": "Could someone have cleared it away? You scour the janitor's room but no sign of your document. The serach continues"
   },
   {
     "id": 17,
@@ -448,6 +437,6 @@
       "type": "resume",
       "amount": "50"
     },
-    "description": "You've made it! You slide out the chair to find a pristine resume. The refreshing feeling of success and wave of relief is interupted by a distinct sound.. As you turn around slowly, you realisse you were in fact sitting at the first desk in front of the elevators.. "
+    "description": "You've made it! /n You slide out the chair to find a pristine resume. The refreshing feeling of success and wave of relief is interupted by a distinct sound.. As you turn around slowly, you realise you were in fact sitting at the first desk in front of the elevators.. "
   }
 ]

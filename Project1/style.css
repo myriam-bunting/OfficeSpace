@@ -1,8 +1,7 @@
-/* root: (Thunder Cloud: #505160 Meadow: #598234 Moss: #aebd38 Waterfall: #68829e) */
-@font-face {
+/* @font-face {
   font-family: terminal;
   src: url(font_terminal.otf);
-}
+} */
 body {
   text-align: center;
   padding: 70px;
@@ -35,7 +34,7 @@ nav {
   text-align: left;
   opacity: 80%;
   padding: 4px 4px 4px 8px;
-  font-family: terminal;
+  font-family: "JetBrains Mono", monospace;
   border: 2px solid darkgrey;
   border-bottom: 0px;
   font-size: 1.2em;
@@ -45,7 +44,7 @@ div.gameBox {
   color: #aebd38;
   margin-bottom: 20px;
   padding: 8px;
-  font-family: terminal;
+  font-family: "JetBrains Mono", monospace;
   border: 2px solid darkgrey;
   border-top: 0px;
   height: 56vh;
@@ -90,4 +89,10 @@ p {
 .inputDiv,
 .typeDiv {
   margin: 0 auto;
+}
+
+.lineButton .weaponButton {
+  color: #598234;
+  text-align: left;
+  font-size: smaller;
 }

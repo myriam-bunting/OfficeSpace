@@ -47,15 +47,7 @@ const wholeDocument = async () => {
     getType() {
       return this.type;
     }
-    getWeapons() {
-      // this.weapon.push(weapon);
-      // if (weapon[newPlayer.type] === "cookie" || item.type === "milo") {
-      //   this.moves += item.amount;
-      //   logText(`The ${item.type} has revived you`);
-      // } else if (item.type === "resume") {
-      //   logText(`Game over, your score is ${this.moves}`);
-      // }
-    }
+    getWeapons() {}
     getHeath() {
       this.health -= weaponDamage;
     }
@@ -81,9 +73,14 @@ const wholeDocument = async () => {
       this.backpack.push(item);
       if (item.type === "cookie" || item.type === "milo") {
         this.moves += item.amount;
-        logText(`The ${item.type} has revived you`);
+        logText(`The ${item.type} has given you energy`);
+      } else if (item.type === "dude") {
+        this.moves += item.amount;
+        logText(
+          `Helping out another is great but you really don't have time right now. The clock is ticking`
+        );
       } else if (item.type === "resume") {
-        logText(`Game over, your score is ${this.moves}`);
+        logText(`You're a winner! Your score is ${this.moves}`);
       }
     }
   }
@@ -242,49 +239,65 @@ const wholeDocument = async () => {
   });
 
   document.querySelector("#btn-repond").addEventListener("click", function () {
-    let motivationText = getRoomById(newPlayer.currentRoom).weapon[
-      newPlayer.type
-    ].motivation;
-    console.log(
-      getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].motivation
-    );
+    if (getRoomById(newPlayer.currentRoom).weapon === null) {
+      logText(`No weapons here`);
+      console.log(`No weapons here`);
+      return;
+    }
+    if (getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].motivation) {
+      const motivationText = getRoomById(newPlayer.currentRoom).weapon?.[
+        newPlayer.type
+      ]?.motivation;
 
-    motivationText.forEach((line) => {
-      let lineButton = document.createElement("button");
-      lineButton.setAttribute("id", "lineButton");
-      lineButton.innerText = line;
-      document.querySelector(".gameBox").appendChild(lineButton);
+      motivationText.forEach((line) => {
+        let lineButton = document.createElement("button");
+        lineButton.setAttribute("class", "lineButton");
+        lineButton.innerText = line;
+        document.querySelector(".gameBox").appendChild(lineButton);
+        lineButton.addEventListener("click", function () {
+          logText(`You murrmur ${line} Now get a move on!`);
+        });
+        scrollToBottom("gameBoxDiv");
+      });
+    }
+    if (getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].objects) {
+      console.log("object");
 
-      // document.querySelector(".typeDiv").append(lineButton)
-    });
+      const objectsText = getRoomById(newPlayer.currentRoom).weapon?.[
+        newPlayer.type
+      ]?.object;
 
-    // if (getRoomById(newPlayer.currentRoom).weapon == null) {
-    //   logText(`No weapons here`);
-    //   console.log(`No weapons here`);
-    // } else if (
-    // for(lines of motivationText){
-    //   let
-    // }
-    // logText((document.createElement("button").innerText = motivationText));
-    // ) {
-    //   logText(`Choose a response:`);
-    //   getRoomById(newPlayer.currentRoom).weapon[
-    //     newPlayer.type
-    //   ].motivation.forEach(logText);
-    //   console.log(
-    //     getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].motivation
-    //   );
-    // } else {
-    //   logText(`Choose a weapon:`);
-    //   getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].forEach(
-    //     logText
-    //   );
-    //   console.log(
-    //     `this is my type specific weapons ${
-    //       getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].objects
-    //     }`
-    //   );
-    // }
+      objectsText.forEach((object) => {
+        let weaponButton = document.createElement("button");
+        weaponButton.setAttribute("class", "weaponButton");
+        weaponButton.innerText = object;
+        document.querySelector(".gameBox").appendChild(weaponButton);
+
+        weaponButton.addEventListener("click", function () {
+          logText(`You throw a ${object}`);
+        });
+        scrollToBottom("gameBoxDiv");
+      });
+    }
+  });
+
+  window.addEventListener("keydown", function (e) {
+    switch (e.keycode) {
+      case 38:
+        move("north");
+        break;
+
+      case 37:
+        move("west");
+        break;
+
+      case 39:
+        move("east");
+        break;
+
+      case 40:
+        move("south");
+    }
   });
 
   scrollToBottom("gameBoxDiv");
