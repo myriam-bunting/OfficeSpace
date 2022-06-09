@@ -19,7 +19,7 @@
     "east": 0,
     "monsters": null,
     "treasure": {
-      "type": "cookies",
+      "type": "cookie",
       "amount": 5
     },
     "description": "Office lobby tbc"
@@ -33,7 +33,7 @@
     "east": null,
     "monsters": null,
     "treasure": {
-      "type": "cookies",
+      "type": "cookie",
       "amount": 5
     },
     "description": "Say Hi to Cheryl as you pass the Admmin desk."
@@ -43,7 +43,7 @@
     "location": "Hallway 1",
     "north": 4,
     "south": 2,
-    "west": 16,
+    "west": null,
     "east": 7,
     "monsters": null,
     "treasure": null,
@@ -59,7 +59,7 @@
     "east": 5,
     "monsters": null,
     "treasure": {
-      "type": "cookies",
+      "type": "cookie",
       "amount": 5
     },
     "description": "You have reached the pantry. You see some delicious cookies lying there.. free for all.. A snack could help jog your memory.. "
@@ -80,8 +80,8 @@
     "location": "Hallway 2",
     "north": null,
     "south": null,
-    "west": 10,
-    "east": 5,
+    "west": 5,
+    "east": 10,
     "monsters": null,
     "treasure": null,
     "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now. your time is running out"
@@ -89,8 +89,8 @@
   {
     "id": 7,
     "location": "Couches",
-    "north": 8,
-    "south": 5,
+    "north": 5,
+    "south": 8,
     "west": 3,
     "east": null,
     "monsters": null,
@@ -100,8 +100,8 @@
   {
     "id": 8,
     "location": "HotDesk Zone 2",
-    "north": null,
-    "south": 7,
+    "north": 7,
+    "south": null,
     "west": null,
     "east": 9,
     "monsters": null,
@@ -127,8 +127,8 @@
     "location": "HotDesk zone 3",
     "north": null,
     "south": 9,
-    "west": 15,
-    "east": 6,
+    "west": 6,
+    "east": 15,
     "monsters": null,
     "treasure": null,
     "description": "As you enter the work space, your breath condenses in the air... a chill runs down your spine as a wall of frozen air ensnares you... you reach for your jacket but drop it with the lost sensation of your fingers.. reaching down to pick it up you notice your legs are frozen solid to the ground. /n Choose an object to help yourself get free "
@@ -191,7 +191,7 @@
   {
     "id": 16,
     "location": "Office Space",
-    "north": 3,
+    "north": null,
     "south": null,
     "west": null,
     "east": 12,
@@ -204,7 +204,7 @@
     "location": "HotDesk zone 4",
     "north": null,
     "south": null,
-    "west": null,
+    "west": 15,
     "east": null,
     "monsters": null,
     "treasure": {
