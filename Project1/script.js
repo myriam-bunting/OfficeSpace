@@ -48,7 +48,13 @@ const wholeDocument = async () => {
       return this.type;
     }
     getWeapons() {
-      return this.weapon;
+      // this.weapon.push(weapon);
+      // if (weapon[newPlayer.type] === "cookie" || item.type === "milo") {
+      //   this.moves += item.amount;
+      //   logText(`The ${item.type} has revived you`);
+      // } else if (item.type === "resume") {
+      //   logText(`Game over, your score is ${this.moves}`);
+      // }
     }
     getHeath() {
       this.health -= weaponDamage;
@@ -69,7 +75,7 @@ const wholeDocument = async () => {
     setType(type) {
       this.type = type;
     }
-    fight() {}
+    fight(weapon) {}
 
     pickUpItem(item) {
       this.backpack.push(item);
@@ -98,14 +104,14 @@ const wholeDocument = async () => {
 
   const howToPlay = () => {
     logText(
-      "HOW TO PLAY - Race through the HotDesk office to find your resume. Use the controls to navigate the obstacles"
+      "HOW TO PLAY - Race through the HotDesk office rooms to find your resume. Use the controls to navigate the obstacles in the minimum number of moves. Picked up items will give you more moves."
     );
   };
   document.querySelector("#how-to-play").addEventListener("click", howToPlay);
 
   const controls = () => {
     logText(
-      "Use North, South, East, West to change direction. Use Pick Up to collect items. Attack will give you options for a weapon"
+      "Use North, South, East, West buttons to change direction. Use Pick Up to collect items. Attack will give you options to choose a weapon"
     );
   };
   document.querySelector("#controls").addEventListener("click", controls);
@@ -152,7 +158,7 @@ const wholeDocument = async () => {
           console.log(type);
           if (newPlayer.name && newPlayer.type !== null) {
             logText(
-              `Welcome ${newPlayer.name} the ${newPlayer.type}! You have left your resume at HotDesk... the most popular shared workspace in all the land... Now in order to reach your interview in time, you must wade through the chaos that is the HotDesk and return a victor with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer... GET A MOVE ON THEN!`
+              `Welcome ${newPlayer.name} the ${newPlayer.type}! You have left your resume at HotDesk... the most popular shared workspace in all the land... Now in order to reach your interview in time, you must wade through the chaos that is the HotDesk and return with resume in hand lest you.. well lest you face the repercussions of appearing unprepared to your potential future employer... What's your move?`
             );
           } else {
             alert("Please enter a name");
@@ -235,6 +241,33 @@ const wholeDocument = async () => {
       logText("There is no treasure in this room");
     }
     newPlayer.useMove();
+  });
+
+  document.querySelector("#btn-repond").addEventListener("click", function () {
+    if (
+      getRoomById(newPlayer.currentRoom).weapon == "string" &&
+      getRoomById(newPlayer.currentRoom).weapon !== null
+    ) {
+      logText(`Choose a response:`);
+      getRoomById(newPlayer.currentRoom).weapon[
+        newPlayer.type
+      ].motivation.forEach(logText);
+      console.log(
+        getRoomById(newPlayer.currentRoom).weapon[
+          newPlayer.type
+        ].motivation.forEach(logText)
+      );
+    } else {
+      logText(`Choose a weapon:`);
+      getRoomById(newPlayer.currentRoom).weapon[newPlayer.type].forEach(
+        logText
+      );
+      console.log(
+        getRoomById(newPlayer.currentRoom).weapon[
+          newPlayer.type
+        ].objects.forEach(logText)
+      );
+    }
   });
 
   scrollToBottom("gameBoxDiv");

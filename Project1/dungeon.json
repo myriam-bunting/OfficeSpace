@@ -8,7 +8,8 @@
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": "I AM IN THE LIFT LOBBY"
+    "weapon": null,
+    "description": "You're in the LIFT LOBBY"
   },
   {
     "id": 1,
@@ -22,7 +23,8 @@
       "type": "cookie",
       "amount": 5
     },
-    "description": "Office lobby tbc"
+    "weapon": null,
+    "description": "Floor 24 of office tower 1. You exit the lift.. head down.. trying to remember where you sat in this two level office...you see a cookie on the floor"
   },
   {
     "id": 2,
@@ -31,13 +33,67 @@
     "south": 1,
     "west": null,
     "east": null,
-    "monsters": null,
+    "monsters": {
+      "name": "Cheryl",
+      "health": 10,
+      "weapon": { "small_talk": 3, "office_gossip": 5 }
+    },
     "treasure": {
       "type": "cookie",
       "amount": 5
     },
-    "description": "Say Hi to Cheryl as you pass the Admmin desk."
+    "weapon": {
+      "manager": {
+        "motivation": [
+          "Leaving so early?",
+          "Are you finished yet?",
+          "Well, go talk to Dean, he'll know what to do"
+        ],
+        "objects": {
+          "fluffing": 2,
+          "delegation": 5
+        }
+      },
+      "student": {
+        "motivation": [
+          "I'll be working all night",
+          "BUT WHY IS IT RETURNING UNDEFINED",
+          "Can't wait till the holidays"
+        ],
+        "objects": {
+          "calculator": 5,
+          "pencil": 2,
+          "paper-cup": 2
+        }
+      },
+      "tutor": {
+        "motivation": [
+          "Ask me anything, anytime",
+          "Are your variables declared correctly",
+          "Can't wait till the holidays"
+        ],
+        "objects": {
+          "knowledge": 5,
+          "whiteboard-marker": 5,
+          "mug": 10
+        }
+      },
+      "engineer": {
+        "motivation": [
+          "I just wrote 10 lines of code without searching google",
+          "Turns out I had just missed to csemi-colon on line 2567",
+          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+        ],
+        "objects": {
+          "programmer-memes": 5,
+          "stylis": 2,
+          "laptop-charger": 7
+        }
+      },
+      "description": "You are passing the Admin desk. Cheryl says hello! What do you do?"
+    }
   },
+
   {
     "id": 3,
     "location": "Hallway 1",
@@ -47,6 +103,7 @@
     "east": 7,
     "monsters": null,
     "treasure": null,
+    "weapon": null,
     "description": "A long hallway stretches infront of you.. As you approch the main office, the sound of clicky keyboards hits your ears like a machine gun. The HotDesk has never been busier. Papers flying, people hustling, music thumping...everything feels different.. How ever will you find the desk you were at!"
   },
 
@@ -62,6 +119,7 @@
       "type": "cookie",
       "amount": 5
     },
+    "weapon": null,
     "description": "You have reached the pantry. You see some delicious cookies lying there.. free for all.. A snack could help jog your memory.. "
   },
   {
@@ -73,7 +131,8 @@
     "east": 6,
     "monsters": null,
     "treasure": null,
-    "description": "You reach the desk by the window. Staring intensely at the current occupant makes him look up awkwardly from his screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
+    "weapon": null,
+    "description": "You reach the desk by the window... You are sure you were sitting here yesterday... Staring intensely at the current occupant makes them look up awkwardly from their screen..\"Can I help you...?\" he says. Stress causes you to blurt out \"Paper.. on the seat\" then start to probe at his chair, throwing him to the ground"
   },
   {
     "id": 6,
@@ -84,6 +143,7 @@
     "east": 10,
     "monsters": null,
     "treasure": null,
+    "weapon": null,
     "description": "Another hallyway! Man this place is huge. Beads of sweat decorate your brow now. your time is running out"
   },
   {
@@ -94,8 +154,12 @@
     "west": 3,
     "east": null,
     "monsters": null,
-    "treasure": null,
-    "description": "GA students are lounging around! Cables twist all around the floor. Watch your step.."
+    "treasure": {
+      "type": "laptop cable",
+      "amount": "2"
+    },
+    "weapon": null,
+    "description": "GA students are lounging around! Cables twist all around the floor connecting laptops. Watch your step.. could use some cleaning up around here.."
   },
   {
     "id": 8,
@@ -104,10 +168,64 @@
     "south": null,
     "west": null,
     "east": 9,
-    "monsters": null,
+    "monsters": {
+      "name": "Rattus",
+      "health": 5,
+      "weapon": { "bite": 4, "glare": 2 }
+    },
     "treasure": null,
+    "weapon": {
+      "manager": {
+        "motivation": [
+          "Leaving so early?",
+          "Can you stay back for a bit, I have a dinner",
+          "Well, go talk to Dean, he'll know what to do"
+        ],
+        "objects": {
+          "computer": 10,
+          "delegation": 5
+        }
+      },
+      "student": {
+        "motivation": [
+          "I'll be working all night",
+          "BUT WHY IS IT RETURNING UNDEFINED",
+          "Can't wait till the holidays"
+        ],
+        "objects": {
+          "calculator": 5,
+          "pencil": 2,
+          "paper-cup": 2
+        }
+      },
+      "tutor": {
+        "motivation": [
+          "Ask me anything, anytime",
+          "Are your variables declared correctly",
+          "Can't wait till the holidays"
+        ],
+        "objects": {
+          "knowledge": 5,
+          "whiteboard-marker": 5,
+          "mug": 10
+        }
+      },
+      "engineer": {
+        "motivation": [
+          "I just wrote 10 lines of code without searching google",
+          "Turns out I had just missed to csemi-colon on line 2567",
+          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+        ],
+        "objects": {
+          "programmer-memes": 5,
+          "stylis": 2,
+          "laptop-charger": 7
+        }
+      }
+    },
     "description": "A second office space unfolds as you slide open the glass door. You search the first few desks for your resume. As you pull out the chair a rat jumps up at you. EEkk!"
   },
+
   {
     "id": 9,
     "location": "Pantry 2",
@@ -118,8 +236,9 @@
     "monsters": null,
     "treasure": {
       "type": "milo",
-      "amount": 7
+      "amount": 5
     },
+    "weapon": null,
     "description": "This search has been exhausting. You need some energy. Drink a milo"
   },
   {
@@ -129,8 +248,42 @@
     "south": 9,
     "west": 6,
     "east": 15,
-    "monsters": null,
+    "monsters": {
+      "name": "AirCon",
+      "health": 15,
+      "weapon": { "frostbite": 5, "coldblast": 5 }
+    },
     "treasure": null,
+    "weapon": {
+      "manager": {
+        "objects": {
+          "computer": 10,
+          "delegation": 5
+        }
+      },
+      "student": {
+        "objects": {
+          "calculator": 5,
+          "pencil": 5,
+          "paper-cup": 5
+        }
+      },
+
+      "tutor": {
+        "objects": {
+          "knowledge": 5,
+          "whiteboard-marker": 5,
+          "mug": 10
+        }
+      },
+      "engineer": {
+        "objects": {
+          "programmer-memes": 5,
+          "stylis": 2,
+          "laptop-charger": 7
+        }
+      }
+    },
     "description": "As you enter the work space, your breath condenses in the air... a chill runs down your spine as a wall of frozen air ensnares you... you reach for your jacket but drop it with the lost sensation of your fingers.. reaching down to pick it up you notice your legs are frozen solid to the ground. /n Choose an object to help yourself get free "
   },
   {
@@ -142,6 +295,7 @@
     "east": 13,
     "monsters": null,
     "treasure": null,
+    "weapon": null,
     "description": " No more of this madness! You need to make up time. You found the fire excape to reach the second level of HotDesk. Level UP!"
   },
   {
@@ -153,7 +307,8 @@
     "east": 11,
     "monsters": null,
     "treasure": null,
-    "description": ""
+    "weapon": null,
+    "description": "Cubicle alert! "
   },
   {
     "id": 13,
@@ -164,7 +319,21 @@
     "east": null,
     "monsters": null,
     "treasure": null,
-    "description": "Entering the dark room, you hear cheers of football fans.. the glowing screen lights up a few familiar faces .. They're software engineers you overheard chatting about pull requests yesterday.. but how are they playing FIFA already.. surely it's only 2pm. You check your watch.. Oh dear! You're running out of time!"
+    "weapon": {
+      "engineer": {
+        "motivation": [
+          "I just wrote 10 lines of code without searching google",
+          "Turns out I had just missed to a semi-colon on line 2567",
+          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+        ],
+        "objects": {
+          "programmer-memes": 5,
+          "stylis": 2,
+          "laptop-charger": 7
+        }
+      }
+    },
+    "description": "Entering the dark room, you hear cheers of football fans.. the glowing screen lights up a few familiar faces .. They're software engineers you overheard chatting about pull requests yesterday.. but how are they playing FIFA already.. surely it's only 2pm. You check your watch.. Oh dear! You're running out of time! Can you ask them for  directions?"
   },
   {
     "id": 14,
@@ -173,9 +342,43 @@
     "south": 13,
     "west": null,
     "east": null,
-    "monsters": null,
+    "monsters": {
+      "name": "PaperMonster",
+      "health": 10,
+      "weapon": { "papercuts": 4, "staple-spray": 5 }
+    },
     "treasure": null,
-    "description": "It's thesis submition time and the printers have jammed.. yet again..causing a commotion of office ladies fussing over the solution. Trays of paper are being pulled here and there. Distracted as you carefully step over a large box of fresh paper packets, you are confronted with a mountain of crumpled paper ripped out and tossed aside in frustration. The mass suddenly starts moving towards you, seemingly falling, but then you notice the lumpy eyes and toothy staple grin. It's go time!"
+    "weapon": {
+      "manager": {
+        "objects": {
+          "scissors": 10,
+          "paper": 5,
+          "rock": 0
+        }
+      },
+      "student": {
+        "objects": {
+          "scissors": 10,
+          "paper": 5,
+          "rock": 0
+        }
+      },
+      "tutor": {
+        "objects": {
+          "scissors": 10,
+          "paper": 5,
+          "rock": 0
+        }
+      },
+      "engineer": {
+        "objects": {
+          "scissors": 10,
+          "paper": 5,
+          "rock": 0
+        }
+      }
+    },
+    "description": "It's thesis submition time and the printers have jammed... yet again... causing a commotion of office ladies fussing over the solution... Trays of paper are being pulled here and there. Distracted as you carefully step over a large box of paper reams... you are confronted with a mountain of crumpled paper ripped out and tossed aside in frustration... The mass suddenly starts moving towards you.. seemingly falling.. but then you notice the lumpy eyes and grin full of staples. It's go time"
   },
   {
     "id": 15,
@@ -184,9 +387,43 @@
     "south": 14,
     "west": 10,
     "east": 17,
-    "monsters": null,
+    "monsters": {
+      "name": "colleague",
+      "health": 5,
+      "weapon": { "judgement": 5, "embarassment": 2 }
+    },
+    "weapon": {
+      "manager": {
+        "motivation": [
+          "Leaving so early?",
+          "Can you stay back for a bit, I have a dinner",
+          "Well, go talk to Dean, he'll know what to do"
+        ]
+      },
+      "student": {
+        "motivation": [
+          "I'll be working all night",
+          "BUT WHY IS IT RETURNING UNDEFINED",
+          "Can't wait till the holidays"
+        ]
+      },
+      "tutor": {
+        "motivation": [
+          "Ask me anything, anytime",
+          "Are your variables declared correctly...",
+          "Can't wait till the holidays"
+        ]
+      },
+      "engineer": {
+        "motivation": [
+          "I just wrote 10 lines of code without searching google",
+          "Turns out I had just missed to csemi-colon on line 2567",
+          " I don/'t know what/’s worse, my design skills, or my design after I try to make it with CSS"
+        ]
+      }
+    },
     "treasure": null,
-    "description": "walking past this room you see an old colleague. They usher you in. It appears to be an office lunch party... YES! You think... all this searching is making you hungry.. You help yourself to one of the sandwiches laid out on the table.. /n as you do, all the people in the room stop and turn. Their eyes become fixated on you and your sandwich.. How will you get out of this one.. "
+    "description": "Walking past this room you see an old colleague. They usher you in. It appears to be an office lunch party... YES! You think... all this searching is making you hungry.. You help yourself to one of the sandwiches laid out on the table.. /n as you do, all the people in the room stop and turn. Their eyes become fixated on you and your sandwich.. How will you get out of this one.. "
   },
   {
     "id": 16,

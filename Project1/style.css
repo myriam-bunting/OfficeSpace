@@ -66,8 +66,8 @@ p {
 #controls {
   margin: 0.5em;
   display: inline-block;
-  width: 33.333%;
 }
+
 #controls button {
   height: 2em;
   font-size: 1em;
